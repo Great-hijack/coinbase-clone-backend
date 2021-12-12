@@ -12,7 +12,7 @@
  Target Server Version : 140001
  File Encoding         : 65001
 
- Date: 13/12/2021 03:07:18
+ Date: 13/12/2021 03:33:46
 */
 
 
@@ -30,7 +30,7 @@ CREATE TABLE "public"."users" (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO "public"."users" VALUES (1, 'test', '75fi73Fke');
+INSERT INTO "public"."users" VALUES (1, 'test', '75fi73Fk');
 
 -- ----------------------------
 -- Primary Key structure for table users

@@ -12,7 +12,7 @@
  Target Server Version : 140001
  File Encoding         : 65001
 
- Date: 13/12/2021 03:07:27
+ Date: 13/12/2021 03:33:56
 */
 
 
@@ -32,10 +32,10 @@ CREATE TABLE "public"."history" (
 -- ----------------------------
 -- Records of history
 -- ----------------------------
-INSERT INTO "public"."history" VALUES (4, 1638689108, 'ETH', 0.3, '75fi73Fke');
-INSERT INTO "public"."history" VALUES (3, 1636374120, 'ETH', 0.12, '75fi73Fke');
-INSERT INTO "public"."history" VALUES (2, 1636152840, 'ETH', -0.02, '75fi73Fke');
-INSERT INTO "public"."history" VALUES (6, 1636146240, 'BTC', 0.012, '75fi73Fke');
+INSERT INTO "public"."history" VALUES (4, 1638689108, 'ETH', 0.3, '75fi73Fk');
+INSERT INTO "public"."history" VALUES (3, 1636374120, 'ETH', 0.12, '75fi73Fk');
+INSERT INTO "public"."history" VALUES (2, 1636152840, 'ETH', -0.02, '75fi73Fk');
+INSERT INTO "public"."history" VALUES (6, 1636146240, 'BTC', 0.012, '75fi73Fk');
 
 -- ----------------------------
 -- Primary Key structure for table history
