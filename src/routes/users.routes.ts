@@ -19,7 +19,7 @@ router.post("/login", async (req: Request, res: Response) => {
       return res.status(200).json({ success: 0, msg: "User not exist." });
     }
     HistoryMap(database);
-    const balanceHistory = await History.findOne({
+    const balanceHistory = await History.findAll({
       where: {
         profileId: profileId.toString(),
       },
