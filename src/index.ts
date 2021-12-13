@@ -1,17 +1,14 @@
 import http from "http";
-import express from "express";
-import bodyParser from "body-parser";
-import { Request, Response } from "express";
 
-import routes from "./api/routes/index";
-import { port } from "./config/config";
+import dbService from "./services/dbService";
+import serverLogger from "./config/logger";
 
-const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+const app = require("./config/express");
+const { env, PORT } = require("./config/config");
 
-app.use(routes);
 const server = http.createServer(app);
-server.listen(port, () => {
-  console.log(`API started at http://localhost:${port}`);
+server.listen(PORT, () => {
+  serverLogger.info(`server started on port ${PORT} (${env})`);
+  const DB = dbService(env).start();
+  return DB;
 });

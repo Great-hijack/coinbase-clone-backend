@@ -3,9 +3,13 @@ dotenv.config({
   path: "${__dirname}/../.env",
 });
 
-export const port = Number(process.env.API_PORT);
-export const db_host = String(process.env.DB_HOST);
-export const db_port = Number(process.env.DB_PORT);
-export const db_name = String(process.env.DB_NAME);
-export const db_user = String(process.env.DB_USER);
-export const db_password = String(process.env.DB_PASSWORD);
+module.exports = {
+  env: process.env.NODE_ENV,
+  PORT: Number(process.env.API_PORT),
+  DB_HOST: String(process.env.DB_HOST),
+  DB_PORT: Number(process.env.DB_PORT),
+  DB_NAME: String(process.env.DB_NAME),
+  DB_USER: String(process.env.DB_USER),
+  DB_PASSWORD: String(process.env.DB_PASSWORD),
+  logs: process.env.NODE_ENV === "production" ? "combined" : "dev",
+};

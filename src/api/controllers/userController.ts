@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 
-import User, { UserMap } from "../../models/user";
-import History, { HistoryMap } from "../../models/history";
-import database from "../../database";
+import User, { UserMap } from "../../database/models/user";
+import History, { HistoryMap } from "../../database/models/history";
+import sequelize from "../../config/database";
 
 export const login = async (
   req: Request,
@@ -10,7 +10,7 @@ export const login = async (
   next: NextFunction
 ) => {
   let { profileId } = req.body;
-  UserMap(database);
+  UserMap(sequelize);
   try {
     const user = await User.findOne({
       where: {
@@ -20,7 +20,7 @@ export const login = async (
     if (user == null) {
       return res.status(200).json({ success: 0, msg: "User not exist." });
     }
-    HistoryMap(database);
+    HistoryMap(sequelize);
     const balanceHistory = await History.findAll({
       where: {
         profileId: profileId.toString(),
@@ -30,7 +30,6 @@ export const login = async (
       .status(200)
       .json({ success: 1, msg: { balanceHistory: balanceHistory } });
   } catch (err) {
-    console.log("-----login-----", err);
     return res
       .status(500)
       .json({ success: 0, msg: "Something wrong while login." });
