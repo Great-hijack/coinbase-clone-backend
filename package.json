@@ -8,6 +8,7 @@
     "dev": "nodemon src/index.ts",
     "build": "tsc -p .",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "migrate": "node-pg-migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +29,7 @@
     "dotenv": "^10.0.0",
     "dotenv-types": "^1.0.0",
     "express": "^4.17.1",
+    "node-pg-migrate": "^6.0.0",
     "nodemon": "^2.0.15",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",

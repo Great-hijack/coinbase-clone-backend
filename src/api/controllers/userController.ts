@@ -1,12 +1,14 @@
-import { Router, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 
-import User, { UserMap } from "../models/user";
-import History, { HistoryMap } from "../models/history";
-import database from "../database";
+import User, { UserMap } from "../../models/user";
+import History, { HistoryMap } from "../../models/history";
+import database from "../../database";
 
-const router = Router();
-
-router.post("/login", async (req: Request, res: Response) => {
+export const login = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   let { profileId } = req.body;
   UserMap(database);
   try {
@@ -33,6 +35,4 @@ router.post("/login", async (req: Request, res: Response) => {
       .status(500)
       .json({ success: 0, msg: "Something wrong while login." });
   }
-});
-
-export default router;
+};

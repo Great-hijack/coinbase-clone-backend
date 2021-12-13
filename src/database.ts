@@ -1,4 +1,10 @@
-import { db_host, db_port, db_name, db_user, db_password } from "./config";
+import {
+  db_host,
+  db_port,
+  db_name,
+  db_user,
+  db_password,
+} from "./config/config";
 import { Sequelize } from "sequelize";
 
 export default new Sequelize({
