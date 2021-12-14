@@ -114,3 +114,4 @@ const dbService = (environment: string) => {
 };
 
 export = dbService;
+// module.exports = dbService;

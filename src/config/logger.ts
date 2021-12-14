@@ -99,7 +99,4 @@ const serverLogger = winston.createLogger({
   transports: serverLogTransports(env),
 });
 
-// module.exports = {
-//   serverLogger,
-// };
 export = serverLogger;

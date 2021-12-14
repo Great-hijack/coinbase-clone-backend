@@ -9,7 +9,7 @@ export const login = async (
   res: Response,
   next: NextFunction
 ) => {
-  let { profileId } = req.body;
+  const { profileId } = req.body;
   UserMap(sequelize);
   try {
     const user = await User.findOne({
@@ -28,7 +28,7 @@ export const login = async (
     });
     res
       .status(200)
-      .json({ success: 1, msg: { balanceHistory: balanceHistory } });
+      .json({ success: 1, msg: { balanceHistory } });
   } catch (err) {
     return res
       .status(500)
