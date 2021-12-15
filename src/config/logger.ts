@@ -13,7 +13,7 @@ const serverLogTransports = (environment: string) => {
   let transports: any = [];
 
   switch (environment) {
-    case "local":
+    case "add-db":
     case "test":
       transports = [
         new winston.transports.File({

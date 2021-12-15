@@ -7,8 +7,8 @@ let userValue = `INSERT INTO "public"."users" VALUES (1, 'test', '75fi73Fk');`;
 exports.shorthands = undefined;
 
 exports.up = (pgm) => {
-  pgm.db.query(historyValue);
   pgm.db.query(userValue);
+  pgm.db.query(historyValue);
 };
 
 exports.down = (pgm) => {};

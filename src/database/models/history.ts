@@ -9,16 +9,16 @@ export default class History extends Model {
 export const HistoryMap = (sequelize: Sequelize) => {
   History.init(
     {
-      exchangeTime: {
+      exchangetime: {
         type: DataTypes.INTEGER,
       },
-      coinSymbol: {
+      coinsymbol: {
         type: DataTypes.STRING(8),
       },
       balance: {
         type: DataTypes.NUMBER,
       },
-      profileId: {
+      profileid: {
         type: DataTypes.STRING(100),
         allowNull: true,
       },

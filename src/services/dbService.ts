@@ -79,7 +79,6 @@ const dbService = (environment: string) => {
   const startProd = async () => {
     try {
       await authenticateDB();
-      // Don't dropDB
       return startDBService();
     } catch (err) {
       return errorDBStart(err);
@@ -114,4 +113,3 @@ const dbService = (environment: string) => {
 };
 
 export = dbService;
-// module.exports = dbService;

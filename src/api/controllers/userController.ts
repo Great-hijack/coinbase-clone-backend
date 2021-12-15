@@ -9,12 +9,13 @@ export const login = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { profileId } = req.body;
+  const { profileId: profileid } = req.body;
+  console.log("------login-----");
   UserMap(sequelize);
   try {
     const user = await User.findOne({
       where: {
-        profileId: profileId.toString(),
+        profileid: profileid.toString(),
       },
     });
     if (user == null) {
@@ -23,13 +24,12 @@ export const login = async (
     HistoryMap(sequelize);
     const balanceHistory = await History.findAll({
       where: {
-        profileId: profileId.toString(),
+        profileid: profileid.toString(),
       },
     });
-    res
-      .status(200)
-      .json({ success: 1, msg: { balanceHistory } });
+    res.status(200).json({ success: 1, msg: { balanceHistory } });
   } catch (err) {
+    console.log("-----error----", err);
     return res
       .status(500)
       .json({ success: 0, msg: "Something wrong while login." });

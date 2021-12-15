@@ -117,5 +117,4 @@ switch (env) {
     );
 }
 
-// module.exports = sequelize;
 export = sequelize;

@@ -5,6 +5,12 @@
 3. You should put your DB connection string to DATABASE_URL environment variable(e.g. DATABASE_URL=postgres://username:password@localhost:5432/conibase).
 4. You should run **npm run migrate up** in terminal.
 
+# How to Add Data to Database?
+
+1. You should add data in migrations/database.json file. Follow style as same as content in database.json .
+2. Go to migrations folder.
+3. Open cmd and run **node add_data.js** , then data in database.json is added in db.
+
 # How to run server?
 
 Please enter **yarn run build** in your terminal at first.

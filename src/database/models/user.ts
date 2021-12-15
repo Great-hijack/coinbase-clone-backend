@@ -3,7 +3,7 @@ import { Model, Sequelize, DataTypes } from "sequelize";
 export default class User extends Model {
   public id?: number;
   public name!: string;
-  public profileId?: string;
+  public profileid?: string;
 }
 export const UserMap = (sequelize: Sequelize) => {
   User.init(
@@ -16,7 +16,7 @@ export const UserMap = (sequelize: Sequelize) => {
       name: {
         type: DataTypes.STRING(255),
       },
-      profileId: {
+      profileid: {
         type: DataTypes.STRING(100),
         allowNull: true,
       },
