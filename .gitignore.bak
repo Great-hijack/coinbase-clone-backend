@@ -60,7 +60,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+
 
 # jet brains
 .idea/
@@ -68,4 +68,3 @@ typings/
 #public scss
 .public/scss
 public/
-README.md
