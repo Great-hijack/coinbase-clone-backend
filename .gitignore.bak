@@ -68,3 +68,4 @@ typings/
 #public scss
 .public/scss
 public/
+.env
