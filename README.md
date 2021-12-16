@@ -8,7 +8,7 @@
 # How to Add Data to Database?
 
 1. You should add data in migrations/database.json file. Follow style as same as content in database.json .
-2. Open database.json file and change values for database setting with your database values.
+2. Open add_data.json file and change values for database setting with your database values.
    (e.g
    const pool = new Pool({
    user: "postgres",
