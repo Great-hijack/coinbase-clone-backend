@@ -8,13 +8,16 @@
 # How to Add Data to Database?
 
 1. You should add data in migrations/database.json file. Follow style as same as content in database.json .
-2. Open database.json file and change values for database with your database values.
+2. Open database.json file and change values for database setting with your database values.
    (e.g
+   const pool = new Pool({
    user: "postgres",
    host: "localhost",
    database: "coinbase",
    password: "admin",
-   port: "5432").
+   port: "5432",
+   });
+   ).
 3. Go to migrations folder.
 4. Open cmd and run **node add_data.js** , then data in database.json is added in db.
 
