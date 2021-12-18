@@ -8,7 +8,8 @@
     "dev": "cross-env NODE_ENV=dev nodemon src/index.ts",
     "build": "tsc -p .",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
-    "migrate": "node-pg-migrate",
+    "migrate": "node-pg-migrate up",
+    "add_data": "node mockup/add_data.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

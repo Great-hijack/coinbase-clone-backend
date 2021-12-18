@@ -11,11 +11,11 @@ const pool = new Pool({
   port: "5432",
 });
 const queryUser = `INSERT INTO users(
-  name, profileId) VALUES(
+  name, profileid) VALUES(
   '', '${profileid}'
   );`;
 
-let queryHistory = `INSERT INTO history(exchangeTime, coinSymbol,balance,profileId) VALUES`;
+let queryHistory = `INSERT INTO history(exchangetime, coinsymbol,balance,profileid) VALUES`;
 const historyValues = history.map((item) => {
   const exchangetime = Math.floor(new Date(item.exchangetime).getTime() / 1000);
   return `(${exchangetime}, '${item.coinsymbol}', ${item.balance}, '${profileid}')`;
