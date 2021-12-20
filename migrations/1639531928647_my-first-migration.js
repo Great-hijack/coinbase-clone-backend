@@ -15,6 +15,7 @@ exports.up = (pgm) => {
     id: "id",
     name: { type: "varchar(255)" },
     profileid: { type: "varchar(255)" },
+    notificationcount: { type: "numeric(255)", notNull: true },
   });
 };
 

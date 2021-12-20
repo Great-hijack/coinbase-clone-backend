@@ -4,6 +4,7 @@ export default class User extends Model {
   public id?: number;
   public name!: string;
   public profileid?: string;
+  public notificationcount?: number;
 }
 export const UserMap = (sequelize: Sequelize) => {
   User.init(
@@ -18,6 +19,10 @@ export const UserMap = (sequelize: Sequelize) => {
       },
       profileid: {
         type: DataTypes.STRING(100),
+        allowNull: true,
+      },
+      notificationcount: {
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
     },

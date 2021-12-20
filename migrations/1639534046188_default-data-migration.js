@@ -4,7 +4,7 @@ INSERT INTO "public"."history"(exchangetime, coinsymbol,balance,profileid) VALUE
 INSERT INTO "public"."history"(exchangetime, coinsymbol,balance,profileid) VALUES (1636152840, 'ETH', -0.02, '75fi73Fk');
 INSERT INTO "public"."history"(exchangetime, coinsymbol,balance,profileid) VALUES (1636146240, 'BTC', 0.012, '75fi73Fk');`;
 let userValue = `INSERT INTO "public"."users"(
-  name, profileid) VALUES ('test', '75fi73Fk');`;
+  name, profileid,notificationcount) VALUES ('test', '75fi73Fk',2);`;
 exports.shorthands = undefined;
 
 exports.up = (pgm) => {

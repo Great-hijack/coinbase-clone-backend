@@ -26,7 +26,10 @@ export const login = async (
         profileid: profileid.toString(),
       },
     });
-    res.status(200).json({ success: 1, msg: { balanceHistory } });
+    res.status(200).json({
+      success: 1,
+      msg: { balanceHistory, notificationcount: user.notificationcount },
+    });
   } catch (err) {
     return res
       .status(500)

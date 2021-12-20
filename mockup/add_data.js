@@ -1,6 +1,6 @@
 const updateDb = require("./database.json");
 
-const { profileid, history } = updateDb;
+const { profileid, notificationcount, history } = updateDb;
 const { Pool, Client } = require("pg");
 
 const pool = new Pool({
@@ -11,11 +11,11 @@ const pool = new Pool({
   port: "5432",
 });
 const queryUser = `INSERT INTO users(
-  name, profileid) VALUES(
-  '', '${profileid}'
+  name, profileid,notificationcount) VALUES(
+  '', '${profileid}','${notificationcount}'
   );`;
 
-let queryHistory = `INSERT INTO history(exchangetime, coinsymbol,balance,profileid) VALUES`;
+let queryHistory = `INSERT INTO history(exchangetime,coinsymbol,balance,profileid) VALUES`;
 const historyValues = history.map((item) => {
   const exchangetime = Math.floor(new Date(item.exchangetime).getTime() / 1000);
   return `(${exchangetime}, '${item.coinsymbol}', ${item.balance}, '${profileid}')`;
