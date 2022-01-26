@@ -1,7 +1,9 @@
 import { NextFunction, Request, Response } from "express";
 
 import User, { UserMap } from "../../database/models/user";
-import History, { HistoryMap } from "../../database/models/history";
+import Transactions, {
+  TransactionsMap,
+} from "../../database/models/transactions";
 import sequelize from "../../config/database";
 
 export const login = async (
@@ -20,8 +22,8 @@ export const login = async (
     if (user == null) {
       return res.status(200).json({ success: 0, msg: "User not exist." });
     }
-    HistoryMap(sequelize);
-    const balanceHistory = await History.findAll({
+    TransactionsMap(sequelize);
+    const balanceHistory = await Transactions.findAll({
       where: {
         profileid: profileid.toString(),
       },

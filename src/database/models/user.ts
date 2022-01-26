@@ -23,7 +23,7 @@ export const UserMap = (sequelize: Sequelize) => {
       },
       notificationcount: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        defaultValue: 0,
       },
     },
     {
