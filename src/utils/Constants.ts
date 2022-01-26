@@ -9,6 +9,7 @@ const API = {
     TYPES: "/types",
     SYMBOLS: "/symbols",
     ALL: "/all",
+    SYMBOLS_GROUP: "/symbols_group",
   },
 };
 

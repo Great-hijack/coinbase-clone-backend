@@ -11,5 +11,8 @@ router
   .route(API.TRANSACTIONS.SYMBOLS)
   .post(transactionsController.symbolsTransaction);
 router.route(API.TRANSACTIONS.ALL).post(transactionsController.allTransaction);
+router
+  .route(API.TRANSACTIONS.SYMBOLS_GROUP)
+  .post(transactionsController.symbolGroupTransaction);
 
 export default router;

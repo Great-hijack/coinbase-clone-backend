@@ -7,6 +7,29 @@ import Transactions, {
 import serverLogger from "../../config/logger";
 import sequelize from "../../config/database";
 
+export const symbolGroupTransaction = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { profileid } = req.body;
+
+  try {
+    TransactionsMap(sequelize);
+    const query = `SELECT coinsymbol, SUM(balance) FROM transactions WHERE profileid = '${profileid}'  GROUP BY coinsymbol ;`;
+    const transactionData = await Transactions.sequelize?.query(query);
+    res.status(200).json({
+      success: 1,
+      msg: { data: transactionData ? transactionData[0] : [] },
+    });
+  } catch (err) {
+    serverLogger.info(`login error : ${err}`);
+    return res
+      .status(500)
+      .json({ success: 0, msg: "Something wrong while login." });
+  }
+};
+
 export const typesTransaction = async (
   req: Request,
   res: Response,
