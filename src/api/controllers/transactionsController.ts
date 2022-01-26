@@ -40,9 +40,7 @@ export const typesTransaction = async (
   try {
     TransactionsMap(sequelize);
     const query = `SELECT coinsymbol, types, SUM(balance) FROM transactions WHERE profileid = '${profileid.toString()}' AND coinsymbol = '${coinsymbol}' GROUP BY coinsymbol, types;`;
-    const transactionData = await Transactions.sequelize?.query(query, {
-      model: Transactions,
-    });
+    const transactionData = await Transactions.sequelize?.query(query);
 
     res.status(200).json({
       success: 1,
